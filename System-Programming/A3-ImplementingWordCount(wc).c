@@ -1,5 +1,5 @@
 /* A3-ImplementingWordCount(wc).c */
-/***********************************************************************/
+/***********************************************************************
 Notes: After the debacle at A2, I made sure to compile with the right OS and compiler.  Oh, and A1-WritingTheDataFile is missing because I procrastinated too long.  Hey, I have my own circumstances!
 Date due: 9/15/2021
 OS: ubuntu 20.04
@@ -14,7 +14,7 @@ standard input until the end-of-file. The wc command supports the following comm
 -l -- display the number of new-lines
 -w -- displays the number of words
 <file> -- read from the specified file instead of standard input. 
-/***********************************************************************/
+***********************************************************************/
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,44 +31,54 @@ int bytesWritten;
 //My implemented version of wc---------------------------------------------
 void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, int linesRead, int wordsRead, char mode[])
 {
-	int i;//reads a line into buf from fd as long as there is a string to read or until eof
+	int i;
+	//reads a line into buf from fd as long as there is a string to read or until eof
 	while ((bytesRead = read(fd, buf, BUFF_SIZE)) > 0)
 		{       //ends buf with end of string
 			buf[bytesRead] = '\0';
 			//check buf to count characters, newlines, and words
 			for (i = 0; i<bytesRead; i++)
-			{
+			{       //counts number of words read
+				//identifies words by incrementing if the current character is 
+				//(not a space or EOF) and (index is greater than 0) and 
+				//(the previous character is not a space
 				if ((isspace(buf[i])) || (buf[i] == '\0'))
-				{
+				{       
 					if ((i>0) && (!isspace(buf[i-1])))
 					{
 						wordsRead++;
 					}
 				}
+				//counts bytes read
+				//space characters are not counted
 				if (!isspace(buf[i]))
 				{
 					totalbytesRead++;
 				}
+				//counts number of lines read
 				if (buf[i] == '\n')
 				{ 
 					linesRead++;
 				}
 			}
-			if (bytesRead == -1)//this is if nothing is read
+			if (bytesRead == -1)//exits with failure message if nothing is read
 			{
 				perror("read from standard input");
 				exit(EXIT_FAILURE);
 			}
 		}
 		//handles the displaying of num chars, newlines, & words
+	        //word count mode
 		if ((strcmp(mode, "default") == 0) || (strcmp(mode, "-w") == 0))
 		{
 			printf("total words read: %d\n", wordsRead);
 		}
+	        //line count mode
 		if (strcmp(mode, "-l") == 0)
 		{
 			printf("total lines read: %d\n", linesRead);
 		}
+	        //character count mode (spaces and EOF are not counted as characters in this implementation)
 		if (strcmp(mode, "-c") == 0)
 		{
 			printf("total chars read: %d\n", totalbytesRead);
@@ -76,7 +86,7 @@ void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, i
 }
 
 
-//Assumes txt file is in the same directory as this program.
+//Assumes txt file is in the same directory as this program when compiling and running this program.
 int main(int argc, char *argv[])
 {//initializing variables
 	int fd;
@@ -90,7 +100,7 @@ int main(int argc, char *argv[])
 //the help screen----------------------------------------------------------
 	printf("Valid arguments are: \n -c \n -l \n -w \n <file> \n");
 	printf("Anything else is invalid!\n");
-	printf("Ex call: ./E3 -c or ./E3 test.txt or ./E3 -w test.txt\n\n");
+	printf("Ex call: ./executablefilename -c or ./executablefilename test.txt or ./executablefilename -w test.txt\n\n");
 //------the default call of wc---------------------------------------------
 	if (argc == 1)//with no arguments
 	{
@@ -99,8 +109,8 @@ int main(int argc, char *argv[])
 		
 	}
 //-------handles command line arguments of size 2--------------------------
-//example call: ./E3 test.txt
-//example call 2: ./E3 -c
+//example call: ./executablefilename test.txt
+//example call 2: ./executablefilename -c
 	if (argc == 2)
 	{	
 		if (strcmp(argv[1], "-c") == 0)
