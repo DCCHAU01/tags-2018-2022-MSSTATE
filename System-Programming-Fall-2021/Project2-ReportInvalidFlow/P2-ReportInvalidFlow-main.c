@@ -1,4 +1,7 @@
 /* P2-ReportInvalidFlow-main.c */
+/* You must be wondering where P1 is.  
+There is no need to dig through my Projects folder this time!
+"It" was just linked lists... */
 /************************************************************************
 Notes: Initially, I was confused about the different ways to open a file.
 	 That was until I got a big, fat 80/100 along with the comment:
