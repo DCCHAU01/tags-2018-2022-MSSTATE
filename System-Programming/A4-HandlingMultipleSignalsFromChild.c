@@ -5,7 +5,11 @@ OS: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
-Desc: an application of fork that generates a parent and a child.  Child runs on a timer.  When the timer expires, a value is randomly generated and a signal is sent to parent.  Parent and child acts depending on value.  Parent will wait for child to terminate before terminating itself.  When signalling an interrupt, type Y to terminate all processes.  type n to continue processes.
+Desc: an application of fork that generates a parent and a child.  
+Child runs on a timer.  When the timer expires, a value is randomly 
+generated and a signal is sent to parent.  Parent and child acts depending 
+on value.  Parent will wait for child to terminate before terminating itself.  
+When signalling an interrupt, type Y to terminate all processes.  type n to continue processes.
 ************************************************************************/
 //If you're OCD or oriented efficiently, you may wonder why I slapped a 
 //bunch of libraries with no explanations added.
