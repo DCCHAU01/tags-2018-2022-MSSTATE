@@ -1,5 +1,6 @@
 /* A2-CreatingAClassDirectoryFramework */
-//Notes: at the time, I forgot the fact that the instructor would compile this code on a Unix distribution.  I compiled this on Windows.... :(
+//Notes: at the time, I forgot the fact that the instructor would compile 
+//this code on a Unix distribution.  I compiled this on Windows.... :(
 //Date due: 9/5/2021
 //Compiler: Visual Studio Code using MinGW
 //Desc: A C Program that creates a directory structure for all system programming files
@@ -29,9 +30,9 @@ int main(int argc, char*argv[])
     char cwd2[PATH_MAX];
     //counter variable for loops
     char i;
-    //
+    //stores file descriptors
     int fd;
-    //
+    //stores names of files we must create
     char t[] = "test0";
     char p[] = "program0";
     char e[] = "exercise0";
@@ -47,7 +48,8 @@ int main(int argc, char*argv[])
     if (argv[1] != NULL)
     {
         //make a directory with name in argv[1]
-        //I forgot what 0777 stood for, but it was supposed to grant permissions to read, write, and search for owner, group, and others 
+        //I forgot what 0777 stood for, but it was supposed to grant 
+        //permissions to read, write, and search for owner, group, and others 
         mkdir(argv[1], 0777);
         //open the directory
         chdir(argv[1]);
