@@ -7,7 +7,7 @@ Thoughts: While learning about makefiles, I thought back to all the times
 	    conclusion.  No.  Why?  These comments are also for myself.
 Date due: 11/7/2021
 OS: ubuntu 20.04
-Made in: Text Editor that comes with Ubuntu
+Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
 Desc: shares data over a pipe.  
