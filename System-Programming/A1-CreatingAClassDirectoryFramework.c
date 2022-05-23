@@ -1,12 +1,13 @@
-//Notes: at the time, I forgot the fact that the instructor would compile the code on a Unix distribution.  I compiled this on Windows.... :(
-//Modification: added more comments as a self-review
+/* A1-CreatingAClassDirectoryFramework */
+//Notes: at the time, I forgot the fact that the instructor would compile this code on a Unix distribution.  I compiled this on Windows.... :(
 //Date due: 9/5/2021
 //Compiler: Visual Studio Code using MinGW
 //Desc: A C Program that creates a directory structure for all system programming files
 //directory structure is as follows:
-//		<root>
-//test			program				exercise
-//test1 test2 test3	prog1 prog2 prog3 prog4 prog5	exer1 exer2 exer3 //                                                    exer4 exer5 exer6 
+//		                        <root>
+//      test			        program				      exercise
+//test1 test2 test3	  prog1 prog2 prog3 prog4 prog5	  exer1 exer2 exer3 
+//                                                    exer4 exer5 exer6 
 //                                                    exer7 exer8 exer9 
 //                                                    exer10
 #include <stdio.h>
@@ -68,7 +69,10 @@ int main(int argc, char*argv[])
     chdir("test");
     for (i = '1'; i<'4'; i++)//creates test files from 1 to 3
     {
+        //changes the last character in the file name into the number i
         t[4] = i;
+        //creates a file with name stored in t; with multiple permissions enabled.  
+        //google for complete list of permissions
         fd = open(t, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
     }
 
@@ -88,7 +92,7 @@ int main(int argc, char*argv[])
         fd = open(e, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 
     }
-    e2[9] = '0';
+    e2[9] = '0';//This line is unnecessary, but I will keep it as a reminder.  This is because e2 needed no modification.
     fd = open(e2, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
     /**************************************************************/
     //exit the main function by returning a 0
