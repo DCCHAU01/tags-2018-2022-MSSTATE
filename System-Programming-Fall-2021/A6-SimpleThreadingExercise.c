@@ -5,7 +5,7 @@ Notes: I read on Quora "Do programmers read long code comments".
 	 "Why I did this".
 Date due: 10/20/2021
 OS: ubuntu 20.04
-Made in: Text Editor that comes with Ubuntu
+Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
 Desc: creates 2 threads.  
