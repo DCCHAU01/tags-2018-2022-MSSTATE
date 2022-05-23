@@ -2,7 +2,7 @@
 /************************************************************************
 Notes: I read on Quora "Do programmers read long code comments".
 	 I arrived to the conclusion that comments are better used for
-	 "Why I did this" explanations.
+	 "Why I did this" compared to "What I did".
 Date due: 10/20/2021
 OS: ubuntu 20.04
 Made in: Text Editor that comes with Ubuntu
