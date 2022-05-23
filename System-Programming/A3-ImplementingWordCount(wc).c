@@ -1,9 +1,9 @@
 /* A3-ImplementingWordCount(wc).c */
 /***********************************************************************
 Notes: After the debacle at A2, I made sure to compile with the right OS and compiler.  
-       It'll work this time.
-       Oh, and A1-WritingTheDataFile is missing because I procrastinated too long.  
-       Hey, I have my own circumstances!
+       Future assignments will be graded properly now!
+       Oh, and A1-WritingTheDataFile is missing because I procrastinated too long.
+       I'll leave it to your imagination.
        However, if you still want to know how to write to a data file, 
        look through my other Assignments.  It's in there somewhere....
 Date due: 9/15/2021
