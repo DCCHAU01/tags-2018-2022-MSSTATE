@@ -8,7 +8,7 @@ Notes: Initially, I was confused about the different ways to open a file.
 	 So here is the corrected version!
 Date due: 9/12/2021
 OS: ubuntu 20.04
-Made in: Text Editor that comes with Ubuntu
+Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
 Desc: the legit version of P2, without using FILE*
