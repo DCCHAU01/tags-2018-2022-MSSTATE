@@ -1,9 +1,14 @@
 /* A3-ImplementingWordCount(wc).c */
 /***********************************************************************
-Notes: After the debacle at A2, I made sure to compile with the right OS and compiler.  Oh, and A1-WritingTheDataFile is missing because I procrastinated too long.  Hey, I have my own circumstances!
+Notes: After the debacle at A2, I made sure to compile with the right OS and compiler.  
+       It'll work this time.
+       Oh, and A1-WritingTheDataFile is missing because I procrastinated too long.  
+       Hey, I have my own circumstances!
+       However, if you still want to know how to write to a data file, 
+       look through my other Assignments.  It's in there somewhere....
 Date due: 9/15/2021
 OS: ubuntu 20.04
-Made in: Text Editor that comes with Ubuntu
+Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
 Desc: a I/O system call implementation of wc
@@ -28,7 +33,7 @@ standard input until the end-of-file. The wc command supports the following comm
 
 int bytesWritten;
 
-//My implemented version of wc---------------------------------------------
+//My implemented version of wc (has a really long parameter list)----------
 void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, int linesRead, int wordsRead, char mode[])
 {
 	int i;
@@ -89,9 +94,9 @@ void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, i
 //Assumes txt file is in the same directory as this program when compiling and running this program.
 int main(int argc, char *argv[])
 {//initializing variables
-	int fd;
-	int flags = O_RDONLY;
-	int perms = S_IRUSR | S_IWUSR;
+	int fd;                          //stores file descriptor
+	int flags = O_RDONLY;            //file can only be read
+	int perms = S_IRUSR | S_IWUSR;   //user can read or write to file
 	char buf[BUF_SIZE];
 	int bytesRead;
 	int totalbytesRead = 0;
@@ -102,6 +107,7 @@ int main(int argc, char *argv[])
 	printf("Anything else is invalid!\n");
 	printf("Ex call: ./executablefilename -c or ./executablefilename test.txt or ./executablefilename -w test.txt\n\n");
 //------the default call of wc---------------------------------------------
+	//counts words from STDIN
 	if (argc == 1)//with no arguments
 	{
 		printf("This is default mode!\n");
@@ -112,7 +118,7 @@ int main(int argc, char *argv[])
 //example call: ./executablefilename test.txt
 //example call 2: ./executablefilename -c
 	if (argc == 2)
-	{	
+	{	//counts a specific thing from STDIN depending on mode
 		if (strcmp(argv[1], "-c") == 0)
 		{
 			printf("This is chars mode!\n");
@@ -130,6 +136,7 @@ int main(int argc, char *argv[])
 			exit(EXIT_SUCCESS);
 		} else if ((argv[1] != NULL))
 		{//if argv[1] is not -c, -l, or -w, then it can only be a fd
+			//opens file and counts words in it
 			fd = open(argv[1], flags, perms);
 			if (fd == -1) //if file doesn't exist
 			{
