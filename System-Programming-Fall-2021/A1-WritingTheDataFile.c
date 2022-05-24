@@ -1,6 +1,6 @@
 /* A1-WritingTheDataFile.c */
 /*
-Notes: If you are reading this after you read A2, you must be 
+Notes: If you are reading this after you read A3, you must be 
 	 wondering why A1 is here.  Well, er, uhmm, it is because
 	 I dug through my files and found it in the Project2 folder
 */
