@@ -3,6 +3,7 @@
 Notes: I read on Quora "Do programmers read long code comments".
 	 I arrived to the conclusion that comments are better used for
 	 "Why I did this".
+Notes 2: After trying this conclusion on A7, I stopped caring about "Why".
 Date due: 10/20/2021
 OS: ubuntu 20.04
 Made in: Text Editor
@@ -63,17 +64,18 @@ int myPrintInt(const int val)
 }
 //-----------------------------------------------------------------------
 //instead of making one thread for even integers and one thread for odd
-//integers, I decided to make one function that takes in even or odd input then incrementing that twice.
+//integers, I decided to make one function that takes in even or odd input 
+//then incrementing that twice for cleanliness
 void *threadFunc(void *arg)
 {
-	pthread_detach(pthread_self());//makes thread detach itself
+	pthread_detach(pthread_self());//thread detach itself
 	struct argVals *argv = (struct argVals *) arg;
 	int i, j;
 	j = argv->integer;
 	struct timespec ts;
 	ts.tv_sec = 1;
 	ts.tv_nsec = 0;
-	for (i = j; i <= limit; i++)//print from j to limit every second
+	for (i = j; i <= limit; i++)
 	{
 		myPrintInt(i);
 		myPrint("\n");
