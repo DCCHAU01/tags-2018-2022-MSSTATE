@@ -1,0 +1,31 @@
+Exercise 6.10
+
+a) Retrieve the names of all employees in department 5
+who work more than 10 hours per week on the ProductX
+project
+
+SELECT fname, minit, lname
+FROM employee, works_on, project
+WHERE dno = 5 and employee.ssn = works_on.essn 
+	AND works_on.pno = project.pnumber
+	AND project.pname = 'ProductX'
+	AND works_on.hours > 10
+    
+    
+b) List the names of all employees who have a
+dependent with the same first name as themselves.
+
+SELECT fname, minit, lname
+FROM employee, dependent
+WHERE employee.ssn = dependent.essn
+	AND employee.fname = dependent.dependent_name
+
+
+c) Find the names of all employees who are directly
+supervised by ëFranklin Wongí
+
+SELECT emplist.fname, emplist.minit, emplist.lname
+FROM employee emplist, employee superlist
+WHERE emplist.superssn = superlist.ssn
+	AND superlist.fname='Franklin'
+	AND superlist.lname='Wong'
