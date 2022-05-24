@@ -1,0 +1,27 @@
+Data is in: tracing.sql.txt
+My answers in: P3-Answers.txt
+
+1. List the contact methods found in the Contact table. For each contact method, list how 
+many people chose that contact method.
+2. Repeat the query from #1 but divide the results by language. The language attribute in the 
+Contact table uses ISO 639-1 codes (en = English, es = Spanish, etc.). It is expected that 
+your groups will consist of the 2-character language codes.
+3. Find the people in the Contact table whose preferred name is not the same as the first 
+letters of their first name. For each person, list their name (first name, middle initial, and 
+last name) and their preferred name.
+Examples: Joseph (preferred name: Joe) would be in the results. Josephine (preferred 
+name: Jo) would not be in the results.
+4. Find the people in the Contact table that are more than 60 years old. For each person, list 
+their name (first name, middle initial, and last name), birthdate, and contact method. Sort 
+the results by birthdate in ascending order.
+5. How many people did not provide a phone number or an email address?
+6. List the people who appear in either the Bluetooth or GPS data. For each person, list their 
+name (first name, middle initial, and last name). Order the results by last name.
+7. List the people who appear in neither the Bluetooth nor the GPS data. For each person, 
+list their name (first name, middle initial, and last name). Order the results by last name.
+8. Calculating close contacts via GPS coordinates is fairly difficult. As a first step, find each 
+person that is located at the same GPS coordinates for at least 15 consecutive minutes. 
+Print a list of CIDs along with GPS coordinates ordered by GPS coordinates.
+9. Who would be considered close contacts based on the Bluetooth data? List the CIDs in 
+pairs for people that are recorded as close for at least 15 consecutive minutes.
+
