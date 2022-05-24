@@ -1,0 +1,38 @@
+add 0 
+add 1
+add 2
+add 3
+add 4
+remove 0
+remove 1
+remove 2
+remove 5
+add 0
+add 1
+add 2
+add 3
+add 4
+add 4 to 3 weight 4
+display all
+remove 4 to 3
+remove 4 to 2
+display all
+add 4 to 2 weight 3
+add 4 to 2 weight 4
+display matrix
+remove 4
+display matrix
+add 0 to 0 weight 1
+add 0 to 3 weight 1
+add 1 to 1 weight 8
+add 1 to 2 weight 8
+add 2 to 0 weight 1
+add 2 to 3 weight 1
+add 3 to 1 weight 1
+add 3 to 2 weight 1
+find 3 to 2
+find 0 to 1
+display matrix
+display vertices
+display list
+output list.txt
