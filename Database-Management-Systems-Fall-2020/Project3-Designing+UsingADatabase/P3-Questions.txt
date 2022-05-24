@@ -1,4 +1,4 @@
-Data is in: tracing.sql.txt
+Data is provided in: tracing.sql.txt
 My answers in: P3-Answers.txt
 
 1. List the contact methods found in the Contact table. For each contact method, list how 
