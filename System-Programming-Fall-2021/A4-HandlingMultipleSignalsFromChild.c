@@ -1,4 +1,8 @@
 /* A4-HandlingMultipleSignalsFromChild.c */
+/***********************************************************************/
+//A little late, but I looked up how to prevent the crawler from linking 
+//to this particular repository, so if you are here without my reference, 
+//good luck.
 /************************************************************************
 Date due: 9/29/2021
 OS: ubuntu 20.04
@@ -15,10 +19,6 @@ When signalling an interrupt, type Y to terminate all processes.  type n to cont
 //bunch of libraries with no explanations added.
 //...When I found a function that required a certain library, I simply
 //slapped it into the "include" section.
-/***********************************************************************/
-//A little late, but I looked up how to prevent the crawler from linking 
-//to this particular repository, so if you are here without my reference, 
-//good luck.
 /****"include" section**************************************************/
 #include <fcntl.h>
 #include <stdio.h>
@@ -29,17 +29,19 @@ When signalling an interrupt, type Y to terminate all processes.  type n to cont
 #include <signal.h>
 #include <sys/wait.h>
 #include <string.h>
-/***********************************************************************/
+
 #define BUF_SIZE 1024
-/***********************************************************************/
+
 //declaring global variables for global access
+/***********************************************************************/
 int ranNum = 0;    //random number
 int X = 0;         //counter for signal SIGUSR1
 int Y = 0;         //counter for signal SIGUSR2
 pid_t pPid;        //parent process id - process id is not an int
 pid_t cPid;        //child process id
-/***********************************************************************/
+
 //prints a string to STDOUT
+/***********************************************************************/
 int myPrint(const char *str)
 {
  	int i = 0;
@@ -81,8 +83,9 @@ int myPrintInt(const int val)
 	}
 	return myPrint(str);
 }
-/***********************************************************************/
+
 //executes when certain processes exit
+/***********************************************************************/
 void exitHandlerC(void) {
 	myPrint("Child exiting\n"); 
 	//sends signal SIGCHLD to parent process id
@@ -95,8 +98,9 @@ void exitHandlerP(void) {
 	kill(cPid, SIGTERM);
 	myPrint("parent exits\n");
 }
-/***********************************************************************/
+
 //determines what action to take when the process receives a signal
+/***********************************************************************/
 void signalHandler(int sig)
 {
  	char buf[BUF_SIZE];
@@ -185,18 +189,20 @@ void signalHandler(int sig)
 		exit(EXIT_SUCCESS);
 	}
 }
-/***********************************************************************/
+
 int main(int argc, char *argv[])
 {
 	//initializing variables
+	/***************************************************************/
 	int i;			//loop variable
 	int sec = 15;		//wait interval in seconds
 	pid_t pid;			//holds process id
 	
 	struct sigaction sa;	//set of variables for signal actions
 	struct itimerval tv;	//set of variables for timer values
-/***********************************************************************/
+	
 	//setting values
+	/***************************************************************/
 	sa.sa_handler = signalHandler;	//sets the signal handler
 	sigemptyset(&sa.sa_mask);		//empties the signal mask
 	sa.sa_flags = 0;				//no flags
@@ -206,7 +212,9 @@ int main(int argc, char *argv[])
 	tv.it_value.tv_usec = 0;
 	tv.it_interval.tv_sec = 0;
 	tv.it_interval.tv_usec = 0;
-/***********************************************************************/
+	
+	//start of process guts
+	/***************************************************************/
 	pPid = getpid();		//parent stores its own process id
 	pid = fork();		//fork processes.  Each process will store 
 					//their own process id into their own copy of pid
@@ -217,17 +225,18 @@ int main(int argc, char *argv[])
 		perror("fork");
 		exit(EXIT_FAILURE);
 	}
-/***********execute if process is child*********************************/
+	
+	//child's execution
+	/***************************************************************/	
 	if (pid == 0){
-		//at exit, do exitHandlerC()
 		atexit(exitHandlerC);
 		//child adds SIGINT to the mask
 		sigaddset(&sa.sa_mask, SIGINT);
 		//I forgot what this does, let me look it up.
 		//child will now block signals in the mask
 		sigprocmask(SIG_BLOCK, &sa.sa_mask, NULL);
-/***********************************************************************/
-	//when a certain signal is received, child will do signalHandler
+		
+		//when signal is received, child will do signalHandler
  		if (sigaction(SIGALRM, &sa, NULL) == -1){
  			perror("sigaction child SIGALRM");
  			exit(EXIT_FAILURE);
@@ -236,12 +245,10 @@ int main(int argc, char *argv[])
  			perror("sigaction child SIGTERM");
  			exit(EXIT_FAILURE);
  		}
-/***********************************************************************/
- 		myPrint("Generating Random Numbers . . . \n");
+
+		myPrint("Generating Random Numbers . . . \n");
  		while (1){
-			//sets timer to 15 seconds
-			//every time the timer expires, SIGALRM is sent to child
-			//look at signalHandler for expected behavior
+			//After "sec" seconds, send SIGALRM to child
  			if (setitimer(ITIMER_REAL, &tv, NULL) < 0){
  				perror("setitimer");
  				exit(EXIT_FAILURE);
@@ -249,14 +256,14 @@ int main(int argc, char *argv[])
  			sleep(sec);
  		}
 	} 
-/***********execute when process is parent******************************/
+	//parent's execution
+	/***************************************************************/	
 	else {
 		//store child process id
 		cPid = pid;
-		//at exit, do exitHandlerP()
+		
 		atexit(exitHandlerP);
-/***********************************************************************/
-		//when a certain signal is received, do signalHandler
+		//when signal is received, do signalHandler
 		if (sigaction(SIGCHLD, &sa, NULL) == -1){
 			perror("sigaction parent SIGCHLD");
 			exit(EXIT_FAILURE);
@@ -275,6 +282,5 @@ int main(int argc, char *argv[])
 		}
 		//parent waits for signals
 		while(1){pause();}
-/***********************************************************************/
 	}
 }
