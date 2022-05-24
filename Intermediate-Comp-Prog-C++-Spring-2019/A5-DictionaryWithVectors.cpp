@@ -3,8 +3,7 @@
 	"What is the most useful code comment you've seen?"
 	Needless to say, I scrolled through the comments.
 	I do hope I do not get screwed over.  
-	If I do, you may have to deal with code that acts like naughty children.
-	And I may have to add a clause stating that the code is mine while in production.
+	I may have to add a clause stating that the code is mine until paid in full.
 	Program Description:
 		Input term and definition then outputs term with definition in a numbered list.
 */
