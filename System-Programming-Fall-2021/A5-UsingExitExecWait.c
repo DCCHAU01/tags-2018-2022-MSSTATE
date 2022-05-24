@@ -97,13 +97,13 @@ int main(int argc, char *argv[])
 		{
 			read(fd, &b, sizeof(b));
 			myPrintInt(b);
-			myPrint("\n");//displays read value
+			myPrint("\n");
 			avg += b;//accumulating average
 			i++;
 		}
-		avg /= 60;//computes average
+		avg /= 60;//compute average
 		myPrint("Average: ");
-		myPrintInt(avg);//displays average
+		myPrintInt(avg);
 		myPrint("\n");
 //cleaning up------------------------------------------------------------
 		close(fd);
