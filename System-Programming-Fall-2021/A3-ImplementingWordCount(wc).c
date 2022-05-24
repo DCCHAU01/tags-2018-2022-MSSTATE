@@ -37,16 +37,12 @@ int bytesWritten;
 void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, int linesRead, int wordsRead, char mode[])
 {
 	int i;
-	//reads a line into buf from fd as long as there is a string to read or until eof
 	while ((bytesRead = read(fd, buf, BUFF_SIZE)) > 0)
-		{       //ends buf with end of string
+		{
 			buf[bytesRead] = '\0';
-			//check buf to count characters, newlines, and words
+			//count characters, newlines, and words
 			for (i = 0; i<bytesRead; i++)
-			{       //counts number of words read
-				//identifies words by incrementing if the current character is 
-				//(not a space or EOF) and (index is greater than 0) and 
-				//(the previous character is not a space
+			{       //count words
 				if ((isspace(buf[i])) || (buf[i] == '\0'))
 				{       
 					if ((i>0) && (!isspace(buf[i-1])))
@@ -54,19 +50,18 @@ void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, i
 						wordsRead++;
 					}
 				}
-				//counts bytes read
-				//space characters are not counted
-				if (!isspace(buf[i]))
+				//count bytes 
+				if (!isspace(buf[i])) //I do not know if this is the right way...
 				{
 					totalbytesRead++;
 				}
-				//counts number of lines read
+				//count number of lines
 				if (buf[i] == '\n')
 				{ 
 					linesRead++;
 				}
 			}
-			if (bytesRead == -1)//exits with failure message if nothing is read
+			if (bytesRead == -1) //Will this ever run?
 			{
 				perror("read from standard input");
 				exit(EXIT_FAILURE);
@@ -83,7 +78,7 @@ void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, i
 		{
 			printf("total lines read: %d\n", linesRead);
 		}
-	        //character count mode (spaces and EOF are not counted as characters in this implementation)
+	        //character count mode
 		if (strcmp(mode, "-c") == 0)
 		{
 			printf("total chars read: %d\n", totalbytesRead);
@@ -93,10 +88,10 @@ void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, i
 
 //Assumes txt file is in the same directory as this program when compiling and running this program.
 int main(int argc, char *argv[])
-{//initializing variables
-	int fd;                          //stores file descriptor
-	int flags = O_RDONLY;            //file can only be read
-	int perms = S_IRUSR | S_IWUSR;   //user can read or write to file
+{	//initializing variables
+	int fd;
+	int flags = O_RDONLY;
+	int perms = S_IRUSR | S_IWUSR;
 	char buf[BUF_SIZE];
 	int bytesRead;
 	int totalbytesRead = 0;
@@ -117,29 +112,23 @@ int main(int argc, char *argv[])
 //-------handles command line arguments of size 2--------------------------
 //example call: ./executablefilename test.txt
 //example call 2: ./executablefilename -c
-	if (argc == 2)
-	{	//counts a specific thing from STDIN depending on mode
-		if (strcmp(argv[1], "-c") == 0)
-		{
+	if (argc == 2) {
+		if (strcmp(argv[1], "-c") == 0) {
 			printf("This is chars mode!\n");
 			EWC(STDIN_FILENO, buf, BUF_SIZE, bytesRead, totalbytesRead, linesRead, wordsRead, "-c");
 			exit(EXIT_SUCCESS);
-		} else if (strcmp(argv[1], "-l") == 0)
-		{
+		} else if (strcmp(argv[1], "-l") == 0) {
 			printf("This is newlines mode!\n");
 			EWC(STDIN_FILENO, buf, BUF_SIZE, bytesRead, totalbytesRead, linesRead, wordsRead, "-l");
 			exit(EXIT_SUCCESS);
-		} else if (strcmp(argv[1], "-w") == 0)
-		{
+		} else if (strcmp(argv[1], "-w") == 0) {
 			printf("This is words mode!\n");
 			EWC(STDIN_FILENO, buf, BUF_SIZE, bytesRead, totalbytesRead, linesRead, wordsRead, "-w");
 			exit(EXIT_SUCCESS);
-		} else if ((argv[1] != NULL))
-		{//if argv[1] is not -c, -l, or -w, then it can only be a fd
+		} else if ((argv[1] != NULL)) {
 			//opens file and counts words in it
 			fd = open(argv[1], flags, perms);
-			if (fd == -1) //if file doesn't exist
-			{
+			if (fd == -1) //if file doesn't exist {
 				perror("error\n");
 				exit(EXIT_FAILURE);
 			} else {//if file exists
@@ -147,40 +136,34 @@ int main(int argc, char *argv[])
 			}
 			printf("This is default mode!\n");
 			EWC(fd, buf, BUF_SIZE, bytesRead, totalbytesRead, linesRead, wordsRead, "default");
-		}
+		} //Should have added an "else {"
 	}
 	
 //-------handles command line arguments of size 3--------------------------
 //example call: ./E3 -c test.txt
 //example call 2: ./E3 -l test.txt
 //a 3rd argument allows for displaying the chars, newlines, or words of a file
-	if (argc == 3)
-	{
+	if (argc == 3) {
 		fd = open(argv[2], flags, perms);
-		if (fd == -1) 
-		{
+		if (fd == -1) {
 			perror("error\n");
 			exit(EXIT_FAILURE);
-		} else 
-		{
+		} else {
 			printf("file opened for read!\n");
 		}
-		if (strcmp(argv[1], "-c") == 0)
-		{
+		if (strcmp(argv[1], "-c") == 0) {
 			printf("This is chars mode!\n");
 			EWC(fd, buf, BUF_SIZE, bytesRead, totalbytesRead, linesRead, wordsRead, "-c");
-		} else if (strcmp(argv[1], "-l") == 0)
-		{
+		} else if (strcmp(argv[1], "-l") == 0) {
 			printf("This is newlines mode!\n");
 			EWC(fd, buf, BUF_SIZE, bytesRead, totalbytesRead, linesRead, wordsRead, "-l");
-		} else if (strcmp(argv[1], "-w") == 0)
-		{
+		} else if (strcmp(argv[1], "-w") == 0) {
 			printf("This is words mode!\n");
 			EWC(fd, buf, BUF_SIZE, bytesRead, totalbytesRead, linesRead, wordsRead, "-w");
 		}
 	}	
 	
-//-------closes file-------------------------------------------------------
+//-------the end------------------------------------------------------------
 	close(fd);
 	exit(EXIT_SUCCESS);
 	
