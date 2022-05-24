@@ -1,6 +1,6 @@
 /* A2-CreatingAClassDirectoryFramework */
 //Notes: at the time, I forgot the fact that the instructor would compile 
-//this code on a Unix distribution.  I compiled this on Windows.... :(
+//       this code on a Unix distribution.  I compiled this on Windows.... :(
 //Date due: 9/5/2021
 //Compiler: Visual Studio Code using MinGW
 //Desc: A C Program that creates a directory structure for all system programming files
@@ -23,64 +23,48 @@
 
 int main(int argc, char*argv[])
 {
-    /**************************************************************/
     //declaring variables
-    //buffers used to hold directory name
+    /**************************************************************/
     char cwd1[PATH_MAX];
     char cwd2[PATH_MAX];
-    //counter variable for loops
     char i;
-    //stores file descriptors
     int fd;
-    //stores names of files we must create
     char t[] = "test0";
     char p[] = "program0";
     char e[] = "exercise0";
     char e2[] = "exercise10";
-    /**************************************************************/
+
     //grabbing directory paths and making directories
-    //stores path to current directory
-    //the directory where you called this program
+    /**************************************************************/
     char *current = getcwd(cwd1, sizeof(cwd1));
-    //the following will create a root directory
-    //Example call is ./setupClass "name"  If "name" is not empty, 
-    //a directory is made with the name "name"
-    if (argv[1] != NULL)
-    {
-        //make a directory with name in argv[1]
+    if (argv[1] != NULL) {
         //I forgot what 0777 stood for, but it was supposed to grant 
         //permissions to read, write, and search for owner, group, and others 
         mkdir(argv[1], 0777);
-        //open the directory
         chdir(argv[1]);
     } else {
-        //directory will name itself "myRoot" if no "name" is given
         mkdir("myRoot", 0777);
         chdir("myRoot");
     }
-    //we are currently in the root directory
-    //stores path to root directory
-    char *root = getcwd(cwd2, sizeof(cwd2));//the root directory
+    //we are currently in <root>
+    char *root = getcwd(cwd2, sizeof(cwd2));
     //create three subdirectories within root
     mkdir("test", 0777);
     mkdir("program", 0777);
     mkdir("exercise", 0777);
+    
+    //create files within each subdirectory and in numerical order*/
     /**************************************************************/
-    //create files within each subdirectory and in numerical order
-    //I did this by moving into each directory and looping file creation
     chdir("test");
-    for (i = '1'; i<'4'; i++)//creates test files from 1 to 3
+    for (i = '1'; i<'4'; i++)
     {
-        //changes the last character in the file name into the number i
         t[4] = i;
-        //creates a file with name stored in t; with multiple permissions enabled.  
-        //google for complete list of permissions
         fd = open(t, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
     }
 
     chdir(root);
     chdir("program");
-    for (i = '1'; i<'6'; i++)//creates program files from 1 to 5
+    for (i = '1'; i<'6'; i++)
     {
         p[7] = i;
         fd = open(p, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
@@ -88,15 +72,14 @@ int main(int argc, char*argv[])
 
     chdir(root);
     chdir("exercise");
-    for (i = '1'; i<='9'; i++)//creates exercise files from 1 to 10
+    for (i = '1'; i<='9'; i++)
     {
         e[8] = i;
         fd = open(e, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 
     }
-    e2[9] = '0';//This line is unnecessary, but I will keep it as a reminder.  This is because e2 needed no modification.
+    e2[9] = '0';//This line is completely unnecessary through being overkill.  I will keep it for the overkill.
     fd = open(e2, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
-    /**************************************************************/
-    //exit the main function by returning a 0
+
     return 0;
 }
