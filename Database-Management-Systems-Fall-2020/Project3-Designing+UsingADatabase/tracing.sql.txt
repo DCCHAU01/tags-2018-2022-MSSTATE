@@ -1,0 +1,180 @@
+CREATE TABLE Contact (
+    cid         INT ,
+    first       VARCHAR(40) NOT NULL ,
+    minit       CHAR(1) ,
+    last        VARCHAR(40) NOT NULL ,
+    birth_date  DATE ,
+    language    CHAR(2) ,
+    prefer_name VARCHAR(40) ,
+    phone       CHAR(40) ,
+    email       VARCHAR(50) ,
+    contact_method CHAR(10) NOT NULL ,
+    num         CHAR(10) ,
+    street      VARCHAR(50) ,
+    city        VARCHAR(50) ,
+    state       CHAR(2) ,
+    zip         CHAR(10) ,
+    apt         VARCHAR(20) ,
+    PRIMARY KEY (cid)
+);
+
+INSERT INTO Contact VALUES (1, 'Nathan', 'S', 'Jensen', '1988-08-04', 'en', NULL, '662.643.4122                            ', 'nj872@msstate.edu', 'text      ', '944       ', 'Kathy Common', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (2, 'Gary', 'S', 'Carter', '1942-05-19', 'en', NULL, '662-754-1033                            ', NULL, 'call      ', '834       ', 'Ramos Lights', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (3, 'Andrew', 'K', 'Stafford', '1970-10-10', 'en', 'Drew', '662.484.4286x0045                       ', 'akstaff@yahoo.com', 'email     ', '615       ', 'Nicole Roads', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (4, 'Amy', 'L', 'Patterson', '1932-06-09', 'en', NULL, '268-410-1751                            ', NULL, 'call      ', '813       ', 'Danielle Tunnel', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (5, 'Stuart', 'K', 'Buckley', '1999-05-16', 'en', NULL, '911-273-6033                            ', 'skb84@msstate.edu', 'call      ', '300       ', 'Henry Radial', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (6, 'Michael', 'J', 'Dunn', '1953-06-15', 'en', 'Mike', '662-880-9161x4830                       ', 'mdunn@hotmail.com', 'text      ', '9231      ', 'Melanie Prairie', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (7, 'James', 'H', 'Lane', '2000-12-19', 'en', NULL, '662-356-1760                            ', 'jhl637@msstate.edu', 'text      ', '2504      ', 'Jennifer Mews', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (8, 'Alexa', 'N', 'King', '1969-05-26', 'en', NULL, '2084325002                              ', 'aking@scott-herring.info', 'text      ', '667       ', 'Yoder Fall', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (9, 'Kristina', 'M', 'Lambert', '1985-04-01', 'en', 'Kris', '662-483-3741                            ', 'krism@hotmail.com', 'email     ', '2576      ', 'Hoffman Square', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (10, 'Charles', 'J', 'Davis', '1970-06-28', 'en', NULL, '662-335-4660                            ', 'cj@davis.com', 'email     ', '2127      ', 'Case Fall', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (11, 'Vanessa', 'F', 'Carter', '1956-04-08', 'en', NULL, '617-776-7282                            ', 'vfcarter@lowes.com', 'text      ', '4586      ', 'Landry Flat', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (12, 'Jeffrey', 'J', 'Hernandez', '2000-01-27', 'es', NULL, '(662)732-7108                           ', 'jhernandez@davis-brown.org', 'call      ', '6858      ', 'Wyatt Light', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (13, 'Katie', 'S', 'Stafford', '1974-06-06', 'en', NULL, '(662)955-2518                           ', 'kss2000@gmail.com', 'call      ', '615       ', 'Nicole Roads', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (14, 'Thomas', 'M', 'Lawrence', '1977-07-27', 'en', 'Tom', '662-697-1563x70635                      ', 'lawrence@frye-diaz.com', 'text      ', '10403     ', 'Brandon Point', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (15, 'Barbara', 'B', 'Smith', '1940-12-21', 'en', 'Barb', '212.616.0141                            ', 'bbsmith@kramer-saunders.com', 'email     ', '18186     ', 'Smith Coves', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (16, 'Sydney', 'K', 'Wu', '1959-03-18', 'en', NULL, '451.339.7333                            ', NULL, 'text      ', '7754      ', 'Samuel Trail', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (17, 'Frank', 'S', 'Craig', '1990-04-04', 'en', NULL, '(662)780-5738                           ', 'superfs@gmail.com', 'text      ', '488       ', 'Osborne Village', 'Starkville', 'MS', '39759     ', '2B');
+INSERT INTO Contact VALUES (18, 'Cory', 'J', 'Chan', '1973-09-13', 'en', NULL, '(865)812-3249                           ', 'cjchan@williams.com', 'call      ', '903       ', 'Allen Burgs', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (19, 'Laura', 'J', 'Stewart', '1983-03-01', 'en', NULL, '(662)366-6759                           ', 'amr@king-moore.info', 'text      ', '495       ', 'Richardson Place', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (20, 'Allen', 'M', 'Rodriguez', '1966-03-19', 'es', NULL, '662-285-7903                            ', 'amr1966@yahoo.com', 'email     ', '2498      ', 'Brenda Circles', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (21, 'Thomas', 'C', 'Stafford', '1977-12-12', 'en', NULL, '662-316-7711                            ', 'cemeyer@gmail.com', 'text      ', '488       ', 'Osborne Village', 'Starkville', 'MS', '39759     ', '5C');
+INSERT INTO Contact VALUES (22, 'Carolyn', 'E', 'Meyer', '1935-02-12', 'en', NULL, '(662)667-1353                           ', NULL, 'call      ', '1630      ', 'Bray Square', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (23, 'Rebecca', 'M', 'Pena', '2003-04-19', 'en', 'Becca', '662-720-2103                            ', 'rpena@reyes.com', 'email     ', '7341      ', 'Michael Route', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (24, 'Lauren', 'J', 'Ferrell', '1959-12-27', 'es', NULL, '762.877.6728                            ', 'ljf1959@yahoo.com', 'text      ', '144       ', 'Justin Skyway', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (25, 'Elizabeth', 'L', 'Beck', '1979-12-09', 'en', 'Liz', '662.666.0548                            ', 'elbeck@yahoo.com', 'call      ', '6318      ', 'Jones Flats', 'Starkville', 'MS', '39759     ', '1A');
+INSERT INTO Contact VALUES (26, 'Joseph' , 'J', 'Bobby', '2003-10-10', 'en', 'Joe', '333.333.3333                              ', 'joe@bam.com', 'text       ', '3333          ', 'Jones Flats', 'Starkville', 'MS', '39759     ', NULL);
+INSERT INTO Contact VALUES (27, 'Josephine', 'J', 'Jabby', '1111-11-11', 'en', 'Jo', '444.444.4444                            ', 'jo@ohmg.com', 'text     ', '4444            ', 'Jones Flats', 'Starkville', 'MS',  '39759    ', NULL);
+
+
+CREATE TABLE Location (
+    latitude    REAL ,
+    longitude   REAL ,
+    PRIMARY KEY (latitude, longitude)
+);
+
+
+INSERT INTO Location VALUES (33.454422, -88.78947);
+INSERT INTO Location VALUES (33.454422, -88.78905);
+INSERT INTO Location VALUES (33.45323, -88.78898);
+INSERT INTO Location VALUES (35.55555, 90.93933);
+
+
+CREATE TABLE When_(
+    date_time   TIMESTAMP ,
+    PRIMARY KEY (date_time)
+);
+
+
+INSERT INTO When_ VALUES ('2020-10-17 09:01:00');
+INSERT INTO When_ VALUES ('2020-10-17 09:04:00');
+INSERT INTO When_ VALUES ('2020-10-17 09:07:00');
+INSERT INTO When_ VALUES ('2020-10-17 09:10:00');
+INSERT INTO When_ VALUES ('2020-10-17 09:13:00');
+INSERT INTO When_ VALUES ('2020-10-17 09:16:00');
+INSERT INTO When_ VALUES ('2020-10-17 09:19:00');
+INSERT INTO When_ VALUES ('2020-10-17 09:22:00');
+INSERT INTO When_ VALUES ('2020-10-16 13:01:00');
+INSERT INTO When_ VALUES ('2020-10-16 13:04:00');
+INSERT INTO When_ VALUES ('2020-10-16 13:07:00');
+INSERT INTO When_ VALUES ('2020-10-16 12:58:00');
+INSERT INTO When_ VALUES ('2020-10-16 12:55:00');
+INSERT INTO When_ VALUES ('2020-10-16 12:52:00');
+INSERT INTO When_ VALUES ('2020-10-16 12:49:00');
+INSERT INTO When_ VALUES ('2020-10-17 12:49:00');
+INSERT INTO When_ VALUES ('2020-10-17 12:52:00');
+INSERT INTO When_ VALUES ('2020-10-17 12:55:00');
+INSERT INTO When_ VALUES ('2020-10-17 12:58:00');
+INSERT INTO When_ VALUES ('2020-10-17 12:30:00');
+INSERT INTO When_ VALUES ('2020-10-17 12:50:00');
+
+
+CREATE TABLE At (
+    cid         INT ,
+    latitude    REAL ,
+    longitude   REAL ,
+    date_time   TIMESTAMP ,
+    PRIMARY KEY (cid, latitude, longitude, date_time) ,
+    FOREIGN KEY (cid) 
+        REFERENCES Contact (cid) ,
+    FOREIGN KEY (latitude, longitude) 
+        REFERENCES Location (latitude, longitude) ,
+    FOREIGN KEY (date_time)
+        REFERENCES When_ (date_time)
+);
+
+
+INSERT INTO At VALUES (7, 33.454422, -88.78947, '2020-10-16 12:49:00');
+INSERT INTO At VALUES (7, 33.454422, -88.78947, '2020-10-16 12:52:00');
+INSERT INTO At VALUES (7, 33.454422, -88.78947, '2020-10-16 12:55:00');
+INSERT INTO At VALUES (7, 33.454422, -88.78947, '2020-10-16 12:58:00');
+INSERT INTO At VALUES (7, 33.454422, -88.78947, '2020-10-16 13:01:00');
+INSERT INTO At VALUES (7, 33.454422, -88.78947, '2020-10-16 13:04:00');
+INSERT INTO At VALUES (7, 33.454422, -88.78905, '2020-10-16 13:07:00');
+INSERT INTO At VALUES (23, 33.454422, -88.78947, '2020-10-16 12:49:00');
+INSERT INTO At VALUES (23, 33.454422, -88.78947, '2020-10-16 12:52:00');
+INSERT INTO At VALUES (23, 33.454422, -88.78947, '2020-10-16 12:55:00');
+INSERT INTO At VALUES (23, 33.454422, -88.78947, '2020-10-16 12:58:00');
+INSERT INTO At VALUES (23, 33.454422, -88.78947, '2020-10-16 13:01:00');
+INSERT INTO At VALUES (23, 33.454422, -88.78947, '2020-10-16 13:04:00');
+INSERT INTO At VALUES (10, 33.454422, -88.78947, '2020-10-16 12:49:00');
+INSERT INTO At VALUES (10, 33.454422, -88.78947, '2020-10-16 12:52:00');
+INSERT INTO At VALUES (10, 33.454422, -88.78947, '2020-10-16 12:55:00');
+INSERT INTO At VALUES (10, 33.454422, -88.78947, '2020-10-16 12:58:00');
+INSERT INTO At VALUES (10, 33.454422, -88.78947, '2020-10-17 12:49:00');
+INSERT INTO At VALUES (10, 33.454422, -88.78947, '2020-10-17 12:52:00');
+INSERT INTO At VALUES (10, 33.454422, -88.78947, '2020-10-17 12:55:00');
+INSERT INTO At VALUES (11, 33.454422, -88.78947, '2020-10-16 12:52:00');
+INSERT INTO At VALUES (11, 33.454422, -88.78947, '2020-10-16 12:55:00');
+INSERT INTO At VALUES (11, 33.454422, -88.78947, '2020-10-16 12:58:00');
+INSERT INTO At VALUES (11, 33.454422, -88.78947, '2020-10-17 12:49:00');
+INSERT INTO At VALUES (11, 33.454422, -88.78947, '2020-10-17 12:52:00');
+INSERT INTO At VALUES (11, 33.454422, -88.78947, '2020-10-17 12:55:00');
+INSERT INTO At VALUES (8, 33.454422, -88.78947, '2020-10-17 12:55:00');
+INSERT INTO At VALUES (18, 33.45323, -88.78898, '2020-10-17 12:55:00');
+INSERT INTO At VALUES (18, 33.45323, -88.78898, '2020-10-17 12:52:00');
+INSERT INTO At VALUES (27, 33.45323, -88.78898, '2020-10-17 12:52:00');
+INSERT INTO At VALUES (27, 35.55555, 90.93933, '2020-10-17 12:30:00');
+INSERT INTO At VALUES (27, 35.55555, 90.93933, '2020-10-17 12:50:00');
+
+CREATE TABLE Close_To (
+    user_ INT ,
+    around INT ,
+    date_time TIMESTAMP,
+    PRIMARY KEY (user_, around, date_time) ,
+    FOREIGN KEY (around)
+        REFERENCES Contact (cid) ,
+    FOREIGN KEY (date_time)
+        REFERENCES When_ (date_time) ,
+    FOREIGN KEY (user_)
+        REFERENCES Contact (cid) 
+);
+
+
+INSERT INTO Close_to VALUES (3, 13, '2020-10-17 09:01:00');
+INSERT INTO Close_to VALUES (3, 13, '2020-10-17 09:04:00');
+INSERT INTO Close_to VALUES (3, 13, '2020-10-17 09:07:00');
+INSERT INTO Close_to VALUES (3, 13, '2020-10-17 09:10:00');
+INSERT INTO Close_to VALUES (3, 13, '2020-10-17 09:13:00');
+INSERT INTO Close_to VALUES (3, 13, '2020-10-17 09:16:00');
+INSERT INTO Close_to VALUES (3, 13, '2020-10-17 09:19:00');
+INSERT INTO Close_to VALUES (13, 3, '2020-10-17 09:01:00');
+INSERT INTO Close_to VALUES (13, 3, '2020-10-17 09:04:00');
+INSERT INTO Close_to VALUES (13, 3, '2020-10-17 09:07:00');
+INSERT INTO Close_to VALUES (13, 3, '2020-10-17 09:10:00');
+INSERT INTO Close_to VALUES (13, 3, '2020-10-17 09:13:00');
+INSERT INTO Close_to VALUES (13, 3, '2020-10-17 09:16:00');
+INSERT INTO Close_to VALUES (4, 22, '2020-10-17 09:07:00');
+INSERT INTO Close_to VALUES (4, 22, '2020-10-17 09:10:00');
+INSERT INTO Close_to VALUES (4, 22, '2020-10-17 09:19:00');
+INSERT INTO Close_to VALUES (4, 15, '2020-10-17 09:13:00');
+INSERT INTO Close_to VALUES (4, 15, '2020-10-17 09:16:00');
+INSERT INTO Close_to VALUES (17, 21, '2020-10-17 09:01:00');
+INSERT INTO Close_to VALUES (17, 21, '2020-10-17 09:04:00');
+INSERT INTO Close_to VALUES (17, 21, '2020-10-17 09:07:00');
+INSERT INTO Close_to VALUES (17, 21, '2020-10-17 09:10:00');
+INSERT INTO Close_to VALUES (17, 21, '2020-10-17 09:13:00');
+INSERT INTO Close_to VALUES (17, 21, '2020-10-17 09:16:00');
+INSERT INTO Close_to VALUES (17, 21, '2020-10-17 09:22:00');
+INSERT INTO Close_to VALUES (21, 18, '2020-10-17 09:01:00');
+INSERT INTO Close_to VALUES (21, 18, '2020-10-17 09:04:00');
