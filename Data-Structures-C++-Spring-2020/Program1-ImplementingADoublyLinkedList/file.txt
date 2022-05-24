@@ -1,0 +1,11 @@
+insert eddie 20
+insert tommy 12
+insert boddady 120
+remove akk
+insert akk 5
+remove tommy
+insert stephen 50 after tommy
+insert tina 25 before rey
+insert tina 80 before eddie
+insert monica 19 after tina
+display
