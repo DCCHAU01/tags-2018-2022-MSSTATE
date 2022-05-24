@@ -1,0 +1,70 @@
+30.32 - Consider the relational database schema of Figure 5.5. Suppose that 
+all the relations were created by (and hence are owned by) user X, who wants 
+to grant the following privileges to user accounts A, B, C, D, and E:
+
+(a) Account A can retrieve or modify any relation except DEPENDENT and can 
+    grant any of these privileges to other users.
+
+GRANT SELECT, UPDATE
+ON EMPLOYEE, DEPARTMENT, DEPT_LOCATIONS, PROJECT, WORKS_ON
+TO "A"
+WITH GRANT OPTION;
+
+
+(b) Account B can retrieve all the attributes of EMPLOYEE and DEPARTMENT 
+    except for SALARY, MGRSSN, and MGRSTARTDATE.
+
+CREATE VIEW emps AS
+SELECT fname, minit, lname, ssn, bdate, address, sex, superssn, dno
+FROM employee;
+
+GRANT SELECT ON EMPS TO "B";
+
+
+CREATE VIEW depts AS
+SELECT dname, dnumber
+FROM department;
+
+GRANT SELECT ON DEPTS TO "B";
+
+
+(c) Account C can retrieve or modify WORKS_ON but can only retrieve the 
+    FNAME, MINIT, LNAME, SSN attributes of EMPLOYEE and the PNAME, PNUMBER 
+    attributes of PROJECT.
+
+GRANT SELECT, UPDATE ON works_on TO "C";
+
+
+CREATE VIEW emp1 AS
+SELECT fname, minit, lname, ssn
+FROM employee;
+
+GRANT SELECT ON emp1 TO "C";
+
+
+CREATE VIEW proj1 AS
+SELECT pname, pnumber
+FROM project;
+
+GRANT SELECT ON proj1 TO "C";
+
+
+(d) Account D can retrieve any attribute of EMPLOYEE or DEPENDENT and 
+    can modify DEPENDENT.
+
+GRANT SELECT ON employee, dependent TO "D";
+
+GRANT UPDATE ON dependent TO "D";
+
+
+(e) Account E can retrieve any attribute of EMPLOYEE but only for 
+    EMPLOYEE tuples that have DNO = 3.
+
+CREATE VIEW dno3_employees AS
+SELECT * FROM employee
+WHERE dno=3;
+
+GRANT SELECT ON dno3_employees TO "E";
+
+
+(f) Write SQL statements to grant these privileges. Use views were appropriate.
