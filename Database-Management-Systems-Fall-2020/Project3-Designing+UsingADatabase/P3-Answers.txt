@@ -1,0 +1,27 @@
+1. SELECT DISTINCT contact_method, COUNT(*) FROM Contact GROUP BY
+contact_method
+2. SELECT DISTINCT contact_method, language, COUNT(*) FROM contact
+GROUP BY contact_method, language
+3. SELECT first, minit, last, prefer_name FROM contact WHERE first NOT LIKE
+concat(prefer_name,'%')
+4. SELECT first, minit, last, birth_date, contact_method FROM contact WHERE
+age(birth_date)> '60 years' ORDER BY birth_date ASC
+5. SELECT COUNT(*) FROM contact WHERE phone IS NULL or email IS
+NULL
+6. SELECT DISTINCT C.first, C.minit, C.last FROM contact AS C, at AS A,
+close_to AS T WHERE C.cid=A.cid OR C.cid=T.around OR C.cid=T.user_
+ORDER BY last
+7. (SELECT DISTINCT C.first, C.minit, C.last FROM contact AS C, at AS A,
+close_to AS T )EXCEPT (SELECT C.first, C.minit, C.last FROM contact as C, at
+AS A, close_to AS T WHERE C.cid=A.cid OR C.cid=T.user_ or C.cid=T.around
+ORDER BY C.last)
+8. SELECT DISTINCT A.cid, A.latitude, A.longitude FROM at AS A, at AS B
+WHERE B.cid=A.cid AND B.date_time - A.date_time >= '15 minutes' ORDER
+BY A.latitude, A.longitude ASC
+9. SELECT DISTINCT T.user_, T.around FROM close_to AS T, close_to AS S
+WHERE T.user_ = S.user_ AND T.date_time - S.date_time >= '15 minutes'
+
+References:
+www.postgresql.org
+www.sqlzoo.net
+www.W3schools.com
