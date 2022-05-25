@@ -1,4 +1,6 @@
 //============================================================================
+//Thoughts: Should I show this in my resume or not?  I think that depends on
+//	    whether they care more for a working version than a clean one.
 //Compiler Used:Visual Studio
 //Program Description: a file managing a list of containers with BST
 //============================================================================
