@@ -1,4 +1,5 @@
 //============================================================================
+//Thoughts: This is what rushed code looks like.
 //Compiler Used:Visual Studio
 //Program Description: a file managing an adjacency graph with adjacency matrix/list
 //============================================================================
