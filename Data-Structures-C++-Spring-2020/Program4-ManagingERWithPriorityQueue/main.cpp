@@ -1,4 +1,5 @@
 //============================================================================
+//Thoughts: looking back, why did I decide to use the finicky memory allocation?
 //Compiler Used:Visual Studio
 //Program Description: a file managing an ER with a priority queue
 //============================================================================
