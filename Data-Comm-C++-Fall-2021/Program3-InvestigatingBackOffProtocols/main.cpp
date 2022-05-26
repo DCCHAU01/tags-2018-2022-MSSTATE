@@ -16,7 +16,7 @@ unsigned long long backoff(int N) {
 
     //int N = 100;//number of nodes
     int cN = N;
-    unsigned int windowSize = 2;//2 for linear and binary; 4 for loglog
+    unsigned int windowSize = 2;//change this as needed: 2 for linear and binary; 4 for loglog
     //int numWindows = 1;
     int ran;
     int loop = 1;
