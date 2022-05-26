@@ -1,3 +1,10 @@
-This course split the work of one program over several months. 
-The program posted here is the last version.
-I am unclear about how copyrighting works, so I will just upload files that are 100% mine.
+In this course, I worked on this project in stages.
+The files here are the final product.
+I uploaded this code as proof of work.
+The files needed for compilation do not belong to me so I did not upload them here.
+
+This program is meant to:
+  Identify lexemes and return a token.
+  Take those tokens and parse based on grammar rules.
+  Construct a parse tree.
+  Interpret the instructions in the parse tree.
