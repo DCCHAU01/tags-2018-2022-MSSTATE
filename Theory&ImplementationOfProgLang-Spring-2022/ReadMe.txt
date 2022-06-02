@@ -9,3 +9,5 @@ This program is meant to:
   Take those tokens and parse based on grammar rules.
   Construct a parse tree.
   Interpret the instructions in the parse tree.
+
+If I remember correctly, this project interprets and executes the basic instruction set from Pascal. 
