@@ -4,10 +4,11 @@ The files here are the final stage/product.
 I uploaded this code as proof of work.
 The files needed for compilation do not belong to me so I did not upload them.
 
+Goal: interpret and execute the 10 basic instruction set from Pascal. 
+
 This program is meant to:
   Identify lexemes and return a token.
   Take those tokens and parse based on grammar rules.
   Construct a parse tree.
   Interpret the instructions in the parse tree.
 
-If I remember correctly, this project interprets and executes the basic instruction set from Pascal. 
