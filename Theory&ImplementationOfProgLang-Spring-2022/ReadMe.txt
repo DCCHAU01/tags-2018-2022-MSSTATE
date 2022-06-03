@@ -1,7 +1,7 @@
 Theory and Implementation of Programming Languages Spring 2022
+I uploaded this code as proof of work.
 In this course, I worked on this project in stages.
 The files here are the final stage/product.
-I uploaded this code as proof of work.
 The files needed for compilation do not belong to me so I did not upload them.
 
 Goal: interpret and execute the 10 basic instruction set from Pascal. 
