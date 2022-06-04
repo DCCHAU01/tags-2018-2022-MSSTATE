@@ -15,7 +15,6 @@
 #include <arpa/inet.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <errno.h> //used to access perror for precise error handling
