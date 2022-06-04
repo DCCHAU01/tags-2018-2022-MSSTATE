@@ -11,7 +11,6 @@
 #include <netinet/in.h>  // defines port numbers for (internet) sockets, some address structures, and constants
 #include <netdb.h> 
 #include <time.h>       //used for timer
-#include <iostream>
 #include <fstream>
 #include <arpa/inet.h>   // if you want to use inet_addr() function
 #include <string.h>
