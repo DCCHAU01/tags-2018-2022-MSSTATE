@@ -1,5 +1,5 @@
 //Language: C++
-//Compiler: Pluto
+//Server: Pluto
 //Date: 10/20/2021
 //Modified from PA1
 //Desc: client side communication using UDP, handshake, and acks
