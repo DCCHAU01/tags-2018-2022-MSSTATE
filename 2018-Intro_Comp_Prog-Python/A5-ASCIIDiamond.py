@@ -1,4 +1,3 @@
-#Date Due: Oct. 1, 2018
 #Program Description: the program will print out a diamond based on the given user input
 
 #height of diamond

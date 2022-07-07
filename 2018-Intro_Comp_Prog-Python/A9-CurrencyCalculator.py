@@ -1,6 +1,4 @@
-#Date Due: Nov.5, 2018
-#Program Description: takes a price and determines
-#most efficient way to meet that price in terms of bills and coins
+#Program Description: takes a price and determines the most efficient way to meet that price in terms of bills and coins
 
 def main():
     #The introduction

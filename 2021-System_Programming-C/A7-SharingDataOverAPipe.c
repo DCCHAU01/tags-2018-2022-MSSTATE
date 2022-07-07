@@ -1,12 +1,7 @@
 /* A7-SharingDataOverAPipe.c */
 /************************************************************************
-Thoughts: While learning about makefiles, I thought back to all the times
-	    I dumped myPrint and every other self-made reusable function 
-	    into each and every file.  Ah....
-	    I rethought my conclusion from A6 and arrived at another 
-	    conclusion.  No.  Why?  These comments are also for myself.
-Date due: 11/7/2021
-OS: ubuntu 20.04
+Date: 11/7/2021
+os: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C

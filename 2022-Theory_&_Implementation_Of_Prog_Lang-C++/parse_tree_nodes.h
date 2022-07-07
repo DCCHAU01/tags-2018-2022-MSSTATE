@@ -1,6 +1,6 @@
 /*********************************************************************
   Programming Environment: wsl ubuntu
-  Purpose of File: contains production parsing functions and interpreting functions
+  Purpose of File: contains production parsing nodes and interpreting functions
 **********************************************************************/
 
 #ifndef PARSE_TREE_NODES_H

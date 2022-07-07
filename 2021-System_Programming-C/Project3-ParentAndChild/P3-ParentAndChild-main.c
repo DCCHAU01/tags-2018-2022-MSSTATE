@@ -1,7 +1,7 @@
 /* P3-ParentAndChild-main.c */
 /************************************************************************
-Date due: 10/10/2021
-OS: ubuntu 20.04
+Date: 10/10/2021
+os: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
@@ -11,8 +11,7 @@ The parent receives and outputs the input, reaps children, handles
 interruptions, and prints warnings when child tells it to.  
 Child opens flowData.dat, ignores interruptions, has a REAL interval 
 timer.  When parent dies, child kills itself.  When certain values are 
-read from flowData.dat, it tells parent to print a warning.  Exits on 
-EOF.
+read from flowData.dat, it tells parent to print a warning.  Exits on EOF.
 ************************************************************************/
 #include <fcntl.h>
 #include <stdio.h>

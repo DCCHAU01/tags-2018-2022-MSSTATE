@@ -4,6 +4,10 @@ Warning: Do not run this code, it will not compile.
          Past me must have thrown them out or forgotten 
          to save them somewhere.
 ************************************************************************/
+/*
+	Program Description: 
+		program that modifies a linked list by parsing and inserting terms and definitions from database.txt
+*/
 #include "LinkedList.h"
 #include <string>
 #include <vector>

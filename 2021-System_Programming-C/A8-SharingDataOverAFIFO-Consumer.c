@@ -1,14 +1,14 @@
 /* A8-SharingDataOverAFIFO-Consumer.c */
 /************************************************************************
-//Date due: 11/7/2021
-//OS: ubuntu 20.04
+//Date: 11/7/2021
+//os: ubuntu 20.04
 //Made in: Text Editor
 //Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 //Language: C
 //Role: Consumer
 //Desc: shares data over a FIFO.  
-Producer prompts data and sends data.  
-Consumer receives data and outputs data.
+//Producer prompts data and sends data.  
+//Consumer receives data and outputs data.
 ************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>

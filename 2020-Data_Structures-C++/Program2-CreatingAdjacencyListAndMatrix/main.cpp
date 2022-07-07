@@ -1,5 +1,4 @@
 //============================================================================
-//Thoughts: This is what rushed code looks like.
 //Compiler Used:Visual Studio
 //Program Description: a file managing an adjacency graph with adjacency matrix/list
 //============================================================================
@@ -23,6 +22,7 @@ void exit()//exits program when executed
 	exit(0);
 }
 
+//speaking from Jul 7, 2022 : I can only wince at this implementation
 void loadfile(string filename) {
 	ifstream file;  //creates variable that accepts input from txt file
 	file.open(filename);  //opens given txt file "filename"

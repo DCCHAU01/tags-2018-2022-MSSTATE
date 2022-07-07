@@ -1,6 +1,4 @@
 //============================================================================
-//Thoughts: Looking back, I really went ham on the comments.  At least they make
-//          it easier to remember what I did.  It is ugly, but it works.
 //Compiler Used:Eclipse using MinGW
 //Program Description:a file that implements and manages a list of information in file.txt
 //============================================================================

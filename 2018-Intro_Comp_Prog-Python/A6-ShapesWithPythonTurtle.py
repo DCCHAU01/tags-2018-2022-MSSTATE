@@ -1,4 +1,3 @@
-#Date Due: Oct. 15, 2018
 #Program Description: using Python Turtle to create functions that draw certain shapes
 
 import turtle

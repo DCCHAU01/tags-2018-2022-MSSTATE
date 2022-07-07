@@ -1,8 +1,8 @@
 // P4-ParallelizedRadixSort-Producer.c
 /************************************************************************
-Date due: 11/14/2021
-OS: ubuntu 20.04
-Made in: Text Editor that comes with Ubuntu
+Date: 11/14/2021
+os: ubuntu 20.04
+Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
 Role: Producer

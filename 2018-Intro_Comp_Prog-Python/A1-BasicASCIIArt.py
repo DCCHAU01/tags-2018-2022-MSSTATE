@@ -1,4 +1,3 @@
-#Date Due: 8/27/18
 #Program Description: ASCII Art
 
 #My Initials

@@ -1,12 +1,13 @@
 /* A9-SharedMemoryAndSemaphores-Worker.c */
 /************************************************************************
-//Date due: 11/23/2021
-//OS: ubuntu 20.04
+//Date: 11/23/2021
+//os: ubuntu 20.04
 //Made in: Text Editor
 //Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 //Language: C
 //Role: Worker
-//Desc: uses shared memory and semaphores to communicate a sequence of request and responses between two programs.
+//Desc: uses shared memory and semaphores to communicate a sequence of 
+//request and responses between two programs.
 ************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
@@ -179,8 +180,7 @@ int main(int argc, char *argv[])
 	printf("Request: %d\n", smap->msg[0]);
 	myprintArray(arr, size);
 	loop++;
-	//I could have used if-else-if or switch, 
-	//but there were no runtime or energy concerns.
+	
 	if (smap->msg[0] == 1){C=mySum(arr,size);}//compute sum of data
 	if (smap->msg[0] == 2){C=myProduct(arr,size);}//compute product of data
 	if (smap->msg[0] == 3){C=myDiff(arr,size);}//compute difference of largest and smallest value

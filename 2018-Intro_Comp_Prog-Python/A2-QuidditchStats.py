@@ -1,4 +1,3 @@
-#Date Due: Sept. 10, 2018
 #Program Description: compiles statistics on a a game called Quidditch from Harry Potter gathered from user input.
 
 #winning team stats

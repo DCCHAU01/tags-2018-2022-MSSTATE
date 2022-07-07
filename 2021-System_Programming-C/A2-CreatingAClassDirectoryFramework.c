@@ -1,7 +1,5 @@
 /* A2-CreatingAClassDirectoryFramework */
-//Notes: at the time, I forgot the fact that the instructor would compile 
-//       this code on a Unix distribution.  I compiled this on Windows.... :(
-//Date due: 9/5/2021
+//Date: 9/5/2021
 //Compiler: Visual Studio Code using MinGW
 //Desc: A C Program that creates a directory structure for all system programming files
 //directory structure is as follows:
@@ -11,6 +9,7 @@
 //                                                    exer4 exer5 exer6 
 //                                                    exer7 exer8 exer9 
 //                                                    exer10
+//Issue: was supposed to use compiler-> gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 #include <stdio.h>
 #include <string.h>
 #include <malloc.h>

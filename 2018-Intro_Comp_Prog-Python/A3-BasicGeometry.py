@@ -1,4 +1,3 @@
-#Date Due: Sept. 17, 2018
 #Program Description: Determining if a point is outside, inside, or on a rectangle
 
 #llc=lower left corner

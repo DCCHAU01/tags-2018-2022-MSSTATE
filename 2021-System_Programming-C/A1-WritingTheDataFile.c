@@ -1,12 +1,7 @@
 /* A1-WritingTheDataFile.c */
-/*
-Notes: If you are reading this after you read A3, you must be 
-	 wondering why A1 is here.  Well, er, uhmm, it is because
-	 I dug through my files and found it in the Project2 folder
-*/
 /************************************************************************
-Date due: 8/29/2021
-OS: ubuntu 20.04
+Date: 8/29/2021
+os: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C

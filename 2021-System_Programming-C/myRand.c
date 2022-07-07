@@ -1,10 +1,12 @@
 /* myRand.c */
-//Date due: 10/6/2021
-//OS: ubuntu 20.04
-//Made in: Text Editor that comes with Ubuntu
+//Date: 10/6/2021
+//os: ubuntu 20.04
+//Made in: Text Editor
 //Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 //Language: C
-//Desc: generates file dataX.dat where X is a random number between 0 and 255.  Generates 60 values between 0 and 100 and stores it in dataX.dat.  Exits with exit status of X
+//Desc: generates file dataX.dat where X is a random number between 0 and 255.  
+//Generates 60 values between 0 and 100 and stores it in dataX.dat.  
+//Exits with exit status of X
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>

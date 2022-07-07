@@ -1,6 +1,6 @@
 /*********************************************************************
   Programming Environment: wsl ubuntu
-  Purpose of File: contains production parsing functions, unchanged ever since Part 3
+  Purpose of File: contains production parsing functions
 **********************************************************************/
 
 #ifndef PRODUCTIONS_H
@@ -678,6 +678,7 @@ FactorNode* factor() {
 //YN = 3 : check symbolTable for duplicate identifiers enabled
 //YN = 4 : see if identifier is in symbolTable
 //intuitively : is it an integer literal?
+//Issue: could have used "#define" to use isit() more intuitively
 bool isit(int sometoken, int YN) {
     if ((YN < 0) && (YN > 4)) {     //throws if an invalid YN as input
         throw("invalid YN in isit");

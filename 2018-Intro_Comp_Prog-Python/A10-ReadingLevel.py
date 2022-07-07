@@ -1,4 +1,3 @@
-#Date Due: Nov. 12, 2018
 #Program Description: a book url is given, upon which a formula calculates the reading level reading level
 from math import ceil
 from urllib import request

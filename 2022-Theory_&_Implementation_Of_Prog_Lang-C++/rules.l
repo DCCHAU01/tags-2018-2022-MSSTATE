@@ -1,6 +1,7 @@
 /*********************************************************************            
   Programming Environment: wsl ubuntu
-  Purpose of File: Contains the lexical analysis rules for regular expressions for Part 1 and Part 2 of Class Project
+  Purpose of File: Contains the lexical analysis rules for 
+  regular expressions for Part 1 and Part 2 of Class Project
 **********************************************************************/
 %option yylineno
 %option noyywrap

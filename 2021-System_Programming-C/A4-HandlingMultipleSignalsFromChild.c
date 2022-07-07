@@ -1,11 +1,7 @@
 /* A4-HandlingMultipleSignalsFromChild.c */
-/***********************************************************************/
-//A little late, but I looked up how to prevent the crawler from linking 
-//to this particular repository, so if you are here without my reference, 
-//good luck.
 /************************************************************************
-Date due: 9/29/2021
-OS: ubuntu 20.04
+Date: 9/29/2021
+os: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
@@ -15,11 +11,6 @@ generated and a signal is sent to parent.  Parent and child acts depending
 on value.  Parent will wait for child to terminate before terminating itself.  
 When signalling an interrupt, type Y to terminate all processes.  type n to continue processes.
 ************************************************************************/
-//If you're OCD or oriented efficiently, you may wonder why I slapped a 
-//bunch of libraries with no explanations added.
-//...When I found a function that required a certain library, I simply
-//slapped it into the "include" section.
-/****"include" section**************************************************/
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,7 +24,6 @@ When signalling an interrupt, type Y to terminate all processes.  type n to cont
 #define BUF_SIZE 1024
 
 //declaring global variables for global access
-/***********************************************************************/
 int ranNum = 0;    //random number
 int X = 0;         //counter for signal SIGUSR1
 int Y = 0;         //counter for signal SIGUSR2
@@ -41,7 +31,6 @@ pid_t pPid;        //parent process id - process id is not an int
 pid_t cPid;        //child process id
 
 //prints a string to STDOUT
-/***********************************************************************/
 int myPrint(const char *str)
 {
  	int i = 0;
@@ -85,7 +74,6 @@ int myPrintInt(const int val)
 }
 
 //executes when certain processes exit
-/***********************************************************************/
 void exitHandlerC(void) {
 	myPrint("Child exiting\n"); 
 	//sends signal SIGCHLD to parent process id
@@ -100,7 +88,6 @@ void exitHandlerP(void) {
 }
 
 //determines what action to take when the process receives a signal
-/***********************************************************************/
 void signalHandler(int sig)
 {
  	char buf[BUF_SIZE];
@@ -193,7 +180,6 @@ void signalHandler(int sig)
 int main(int argc, char *argv[])
 {
 	//initializing variables
-	/***************************************************************/
 	int i;			//loop variable
 	int sec = 15;		//wait interval in seconds
 	pid_t pid;			//holds process id
@@ -202,19 +188,15 @@ int main(int argc, char *argv[])
 	struct itimerval tv;	//set of variables for timer values
 	
 	//setting values
-	/***************************************************************/
 	sa.sa_handler = signalHandler;	//sets the signal handler
 	sigemptyset(&sa.sa_mask);		//empties the signal mask
 	sa.sa_flags = 0;				//no flags
-	//I know I looked up how the timer works; clearly, past me knew 
-	//more than present me.  All I know now is that a number is generated every 15 seconds.
 	tv.it_value.tv_sec = sec;		
 	tv.it_value.tv_usec = 0;
 	tv.it_interval.tv_sec = 0;
 	tv.it_interval.tv_usec = 0;
 	
 	//start of process guts
-	/***************************************************************/
 	pPid = getpid();		//parent stores its own process id
 	pid = fork();		//fork processes.  Each process will store 
 					//their own process id into their own copy of pid
@@ -226,8 +208,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	
-	//child's execution
-	/***************************************************************/	
+	//child's execution	
 	if (pid == 0){
 		atexit(exitHandlerC);
 		//child adds SIGINT to the mask
@@ -256,8 +237,7 @@ int main(int argc, char *argv[])
  			sleep(sec);
  		}
 	} 
-	//parent's execution
-	/***************************************************************/	
+	//parent's execution	
 	else {
 		//store child process id
 		cPid = pid;

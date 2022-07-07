@@ -1,12 +1,13 @@
 /* A9-SharedMemoryAndSemaphores-Director.c */
 /************************************************************************
-//Date due: 11/23/2021
-//OS: ubuntu 20.04
+//Date: 11/23/2021
+//os: ubuntu 20.04
 //Made in: Text Editor
 //Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 //Language: C
 //Role: Director
-//Desc: uses shared memory and semaphores to communicate a sequence of request and responses between two programs.
+//Desc: uses shared memory and semaphores to communicate a sequence of 
+//request and responses between two programs.
 ************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>

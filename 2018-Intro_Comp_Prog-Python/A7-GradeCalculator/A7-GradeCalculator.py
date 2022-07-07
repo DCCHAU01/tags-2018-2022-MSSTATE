@@ -1,4 +1,3 @@
-#Date Due: Oct.22, 2018
 #Program Description:  finds the average of a list of grades
 
 file_prompt = input('What is your file name (with extension)?' )

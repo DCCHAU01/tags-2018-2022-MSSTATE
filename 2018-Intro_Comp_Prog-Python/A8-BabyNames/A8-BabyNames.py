@@ -1,4 +1,3 @@
-#Date Due: Oct.29, 2018
 #Program Description: finds the rank of the inputted name in the selected file
 
 

@@ -1,16 +1,7 @@
 /* P2-ReportInvalidFlow-main.c */
-/* You must be wondering where P1 is.  
-There is no need to dig through my Projects folder this time!
-"It" was just linked lists... */
 /************************************************************************
-Notes: Initially, I was confused about the different ways to open a file.
-	 That was until I got a big, fat 80/100 along with the comment:
-	 "This is a systems programming class.. don't use FILE*, fopen, 
-	 fread, fwrite, fscanf, feof, etc.  It defeats the purpose of this 
-	 class."
-	 So here is the corrected version!
-Date due: 9/12/2021
-OS: ubuntu 20.04
+Date: 9/12/2021
+os: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C

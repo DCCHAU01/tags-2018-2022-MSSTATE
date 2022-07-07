@@ -1,13 +1,7 @@
 /* A3-ImplementingWordCount(wc).c */
 /***********************************************************************
-Notes: After the debacle at A2, I made sure to compile with the right OS and compiler.  
-       Future assignments will be graded properly now!
-       Oh, and A1-WritingTheDataFile is missing because I procrastinated too long.
-       I'll leave it to your imagination.
-       However, if you still want to know how to write to a data file, 
-       look through my other Assignments.  It's in there somewhere....
-Date due: 9/15/2021
-OS: ubuntu 20.04
+Date: 9/15/2021
+os: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
@@ -19,6 +13,7 @@ standard input until the end-of-file. The wc command supports the following comm
 -l -- display the number of new-lines
 -w -- displays the number of words
 <file> -- read from the specified file instead of standard input. 
+Issue: clean up EWC
 ***********************************************************************/
 #include <fcntl.h>
 #include <stdio.h>
@@ -33,7 +28,7 @@ standard input until the end-of-file. The wc command supports the following comm
 
 int bytesWritten;
 
-//My implemented version of wc (has a really long parameter list)----------
+//My implemented version of wc
 void EWC(int fd, char buf[], int BUFF_SIZE, int bytesRead, int totalbytesRead, int linesRead, int wordsRead, char mode[])
 {
 	int i;

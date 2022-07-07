@@ -1,9 +1,7 @@
 /* A5-UsingExitExecWait.c */
 /************************************************************************
-Notes: If you somehow found this repository for a school project, 
-	 do not just .COPY.    !UNDERSTAND!
-Date due: 10/6/2021
-OS: ubuntu 20.04
+Date: 10/6/2021
+os: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
@@ -117,7 +115,4 @@ int main(int argc, char *argv[])
 		}
 		exit(EXIT_SUCCESS);
 	}
-//Afterword: at this point in time, I'm still adding comments to my 
-//university assignments then uploading to github.  
-//Imagine my surprise when I found out that past me already added comments.
 }

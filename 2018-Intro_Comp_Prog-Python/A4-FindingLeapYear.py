@@ -1,4 +1,3 @@
-#Date Due: Sept. 24, 2018
 #Program Description: Finding leap years for every 4 years and 400 years
 
 #starting year

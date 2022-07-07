@@ -1,11 +1,7 @@
 /* A6-SimpleThreadingExercise.c */
 /************************************************************************
-Notes: I read on Quora "Do programmers read long code comments".
-	 I arrived to the conclusion that comments are better used for
-	 "Why I did this".
-Notes 2: After trying this conclusion on A7, I stopped caring about "Why".
-Date due: 10/20/2021
-OS: ubuntu 20.04
+Date: 10/20/2021
+os: ubuntu 20.04
 Made in: Text Editor
 Compiler: gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Language: C
@@ -63,9 +59,9 @@ int myPrintInt(const int val)
 	return myPrint(str);
 }
 //-----------------------------------------------------------------------
-//instead of making one thread for even integers and one thread for odd
+//instead of making one function for even integers and one function for odd
 //integers, I decided to make one function that takes in even or odd input 
-//then incrementing that twice for cleanliness
+//then incrementing that twice
 void *threadFunc(void *arg)
 {
 	pthread_detach(pthread_self());//thread detach itself
