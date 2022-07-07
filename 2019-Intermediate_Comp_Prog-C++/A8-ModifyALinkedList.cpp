@@ -1,8 +1,6 @@
 /************************************************************************
 Warning: Do not run this code, it will not compile.
          It is missing "LinkedList.h", "Term.h", and "Database.txt".
-         Past me must have thrown them out or forgotten 
-         to save them somewhere.
 ************************************************************************/
 /*
 	Program Description: 
