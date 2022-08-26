@@ -198,11 +198,11 @@ int *countSort(int *arr, int len, int exp){
 int *radixSort(int *arr, int len){
 	//myPrint("RadixSort\n");
 	int max = findMaxnoBias(arr, len);
-	int i = 1;
+	//int i = 1;
 	for (int exp = 1; max/exp>0; exp *= 10){
 		//printf("Radix Running: %d\n", i);
 		arr = countSort(arr, len, exp);
-		i++;
+		//i++;
 	}
 	return arr;
 }
