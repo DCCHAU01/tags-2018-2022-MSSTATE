@@ -1,2 +1,2 @@
-Think of these files as a proof of work.
-This is because the packet.h and packet.cpp do not belong to me; thus, I chose not to upload those two files.
+client.cpp and server.cpp belong to me
+packet.h and packet.cpp belong to (see file header)
